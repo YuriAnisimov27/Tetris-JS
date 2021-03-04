@@ -1,0 +1,270 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+// Main.layout
+
+nav {
+  position: fixed;
+  height: 60px;
+  background: khaki;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: blue;
+  font-size: 22px;
+}
+
+main {
+  margin-top: 30px;
+  padding: 20px 0 0;
+}
+
+.nav-crud {
+  position: fixed;
+  height: 60px;
+  background: khaki;
+  left: 0;
+  right: 0;
+  top: 60px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid blue;
+}
+
+.nav-crud  a {
+  text-decoration: none;
+  color: blue;
+  font-size: 22px;
+}
+// App Things-v1
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+body {
+  background-image: radial-gradient(circle 248px at center, #b7dadf 0%, #cde3e9 47%, #accef0 100%);
+}
+
+.App {
+  text-align: center;
+  width: 98%;
+  margin: auto;
+  margin-top: 30px;
+  justify-content: space-between;
+  display: flex;
+}
+
+.nav {
+  width: 350px;
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-link {
+  color: red;
+  padding: 5px 20px;
+  border: 2px solid #000;
+  border-radius: 7px;
+}
+
+.nav-link:hover {
+  transform: scale(1.05);
+  color: pink;
+  transition: all 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+}
+
+.appthings-list {
+  width: 640px;
+  max-height: 500px;
+  overflow: scroll;
+}
+
+.appthings-controls {
+  width: 500px;
+  max-height: 300px;
+}
+
+// pages Things-v1
+
+button, .btn {
+  width: 100px;
+  color: #fff;
+  background: blue;
+  padding: 5px 20px;
+  border: 2px solid blue;
+  border-radius: 7px;
+  cursor: pointer;
+  outline: none;
+  margin: 10px 3px;
+}
+
+button:hover, .btn:hover {
+  color: blue;
+  background: #fff;
+}
+
+.input-text {
+  margin: 10px 10px;
+  padding: 5px 20px;
+  border: 2px solid #000;
+  border-radius: 7px;
+  width: 61%;
+}
+
+.placeholder-color::-webkit-input-placeholder {
+  color: red;
+}
+
+.btn-add {
+  color: blue;
+  background: #fff;
+  width: 150px;
+}
+
+.btn-add:hover {
+  background: blue;
+  color: #fff;
+}
+
+// Spinner
+
+@keyframes ldio-0uqildmqgn3f {
+  0% {
+    top: 96px;
+    left: 96px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 18px;
+    left: 18px;
+    width: 156px;
+    height: 156px;
+    opacity: 0;
+  }
+}
+
+.ldio-0uqildmqgn3f div {
+  position: absolute;
+  border-width: 4px;
+  border-style: solid;
+  opacity: 1;
+  border-radius: 50%;
+  animation: ldio-0uqildmqgn3f 1s cubic-bezier(0,0.2,0.8,1) infinite;
+}
+
+.ldio-0uqildmqgn3f div:nth-child(1) {
+  border-color: #e90c59
+}
+
+.ldio-0uqildmqgn3f div:nth-child(2) {
+  border-color: #46dff0;
+  animation-delay: -0.5s;
+}
+
+.loadingio-spinner-ripple-o89dhvm168b {
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  overflow: hidden;
+  background: none;
+}
+.ldio-0uqildmqgn3f {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale(1);
+  backface-visibility: hidden;
+  transform-origin: 0 0; /* see note above */
+}
+.ldio-0uqildmqgn3f div { box-sizing: content-box; }
+
+// thing item
+
+.things-item {
+  text-align: center;
+  width: 440px;
+  margin: 10px auto;
+  list-style-type: none;
+  padding: 5px 10px 15px;
+  background-color: #67a9eb;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 7px;
+}
+
+.things-item:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  transition: .3s;
+}
+
+.thing-title {
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: 22px;
+  margin: 0;
+}
+
+.things-item button {
+  margin-left: 5px;
+  background-color: blue;
+  border: none;
+}
+
+.things-item button:hover {
+  color: blue;
+}
+
+.things-item .btn-long {
+  margin-top: -10px;
+  width: 200px;
+  background-color: red;
+}
+
+.things-item .btn-long:hover {
+  color: red;
+  background-color: #fff;
+}
+
+// things list
+
+.things-list {
+  text-align: left;
+  height: 700px;
+  overflow: scroll;
+}
+
+form {
+  max-width: 500px;
+}
+
+.btn-delete {
+  width: 150px;
+  background-color: red;
+  border: 1px solid white;
+}
+
+.btn-delete:hover {
+  color: red;
+  border: 1px solid red;
+}
+
+.btn-return {
+  width: 150px;
+}
