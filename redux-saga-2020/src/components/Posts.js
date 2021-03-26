@@ -1,8 +1,18 @@
 import React from 'react';
+import Post from './Post';
 
-const Posts = () => {
+const Posts = ({posts}) => {
+  if (!posts.length) {
+    return (
+      <>
+        <h1>Truth Is Out There</h1>
+        <button className='btn btn-info'>Add Posts</button>
+      </>
+    );
+  }
+
   return (
-    <h1>Posts</h1>
+    posts.map(post => <Post post={post} key={post}/>)
   );
 };
 
