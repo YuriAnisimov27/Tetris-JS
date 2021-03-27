@@ -3,11 +3,15 @@ import {connect} from 'react-redux';
 import Post from './Post';
 
 const Posts = ({syncPosts}) => {
+  const onAddPostsHandler = () => {
+    console.log('clicked');
+  };
+
   if (!syncPosts.length) {
     return (
       <>
         <h1>Truth Is Out There</h1>
-        <button className='btn btn-info'>Add Posts</button>
+        <button onClick={onAddPostsHandler} className='btn btn-info'>Add Posts</button>
       </>
     );
   }
@@ -18,13 +22,9 @@ const Posts = ({syncPosts}) => {
 };
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     syncPosts: state.posts.posts
   };
-};
-
-const mapDispatchToProps = () => {
 };
 
 export default connect(mapStateToProps, null)(Posts);

@@ -1,18 +1,35 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import Post from './Post';
+import {fetchPosts} from '../redux/actions';
 
-const FetchedPosts = ({posts}) => {
-  if (!posts.length) {
+const FetchedPosts = ({asyncPosts, fetchPosts}) => {
+  const onAddPostsHandler = () => {
+    fetchPosts();
+  };
+
+  if (!asyncPosts.length) {
     return (
       <>
         <h1>Truth Is Out There</h1>
-        <button className='btn btn-info'>Add Posts</button>
+        <button onClick={onAddPostsHandler} className='btn btn-info'>Add Posts</button>
       </>
     );
   }
 
   return (
-    <h1>FetchedPosts</h1>
+    asyncPosts.map(post => <Post post={post} key={post.id}/>)
   );
 };
 
-export default FetchedPosts;
+const mapStateToProps = (state) => {
+  return {
+    asyncPosts: state.posts.fetchedPosts
+  };
+};
+
+const mapDispatchToProps = {
+  fetchPosts
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(FetchedPosts);
