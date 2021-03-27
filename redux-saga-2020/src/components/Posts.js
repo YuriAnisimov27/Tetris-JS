@@ -1,8 +1,9 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import Post from './Post';
 
-const Posts = ({posts}) => {
-  if (!posts.length) {
+const Posts = ({syncPosts}) => {
+  if (!syncPosts.length) {
     return (
       <>
         <h1>Truth Is Out There</h1>
@@ -12,8 +13,18 @@ const Posts = ({posts}) => {
   }
 
   return (
-    posts.map(post => <Post post={post} key={post}/>)
+    syncPosts.map(post => <Post post={post} key={post}/>)
   );
 };
 
-export default Posts;
+const mapStateToProps = (state) => {
+  console.log(state);
+  return {
+    syncPosts: state.posts.posts
+  };
+};
+
+const mapDispatchToProps = () => {
+};
+
+export default connect(mapStateToProps, null)(Posts);
