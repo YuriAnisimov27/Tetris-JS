@@ -12,12 +12,12 @@ const params = {
     // Partition Key
     {AttributeName: "src", KeyType: "HASH"},
     // Sort Keys
-    {AttributeName: "class", KeyType: "RANGE"}
+    {AttributeName: "className", KeyType: "RANGE"}
   ],
   AttributeDefinitions: [
     {AttributeName: "alt", AttributeType: "S"},
     {AttributeName: "src", AttributeType: "S"},
-    {AttributeName: "class", AttributeType: "S"}
+    {AttributeName: "className", AttributeType: "S"}
   ],
   LocalSecondaryIndexes: [
     {

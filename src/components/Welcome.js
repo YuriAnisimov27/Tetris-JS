@@ -9,7 +9,7 @@ const Welcome = () => {
           {
             imagesData.map(image => {
               return (
-                <img className={image.class} src={image.src} alt={image.alt} key={image.src}/>
+                <img className={image.className} src={image.src} alt={image.alt} key={image.src}/>
               )
             })
           }
