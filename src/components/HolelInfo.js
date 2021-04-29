@@ -1,8 +1,35 @@
-import React from "react";
-import services from './data/services.json';
-import amenities from './data/amenities.json';
+import React, {useEffect, useState} from "react";
+// import services from './data/services.json';
+// import amenities from './data/amenities.json';
 
 const HolelInfo = () => {
+  const [services, setServices] = useState([])
+  const [amenities, setAmenities] = useState([])
+
+  const loadServicesData = async () => {
+    // Query the API Gateway
+    // Assign response data to our state variable
+    const res = await fetch('https://lf5r8pz76a.execute-api.us-east-1.amazonaws.com/services')
+    return (await res).json()
+  }
+
+  const loadAmenitiesData = async () => {
+    // Query the API Gateway
+    // Assign response data to our state variable
+    const res = await fetch('https://lf5r8pz76a.execute-api.us-east-1.amazonaws.com/accessibilities')
+    return (await res).json()
+  }
+
+  useEffect(() => {
+    // Load the menu links data from the API Gateway
+    loadServicesData()
+      .then(data => setServices(data))
+    loadAmenitiesData()
+      .then(data => setAmenities(data))
+
+    // Other side effects
+  }, [])
+
   return (
     <div className="scene" id="hotelinfo">
       <article className="heading">
